@@ -1,47 +1,32 @@
-#⟶̽ जय श्री ༢།म >𝟑🙏🚩
-from pyrogram.types import InlineKeyboardButton, WebAppInfo
+
+
+
+from pyrogram.types import InlineKeyboardButton
 import config
-from RiteshMusic import app
+from AnieXEricaMusic import app
 
 def start_panel(_):
     buttons = [
         [
-            InlineKeyboardButton(
-                text=_["S_B_1"],
-                url=f"https://t.me/{app.username}?startgroup=true"
-            ), 
-            InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT)
+            InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url=config.SUPPORT_GROUP),
         ],
-        [
-            InlineKeyboardButton(
-                text=_["S_B_5"],
-                url="https://github.com/riteshxcoder/RiteshMusic"
-            )
-        ]
     ]
     return buttons
-
 
 def private_panel(_):
     buttons = [
         [
+            InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇs", url=config.SUPPORT_CHANNEL),
+            InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url=config.SUPPORT_GROUP),
+        ],
+        [
             InlineKeyboardButton(
-                text=_["S_B_3"],
-                url=f"https://t.me/{app.username}?startgroup=true"
-            )
+                text="ᴀᴅᴅ ɪɴ ɢʀᴏᴜᴘ",
+                url=f"https://t.me/{app.username}?startgroup=true",
+            ),
         ],
         [
-            InlineKeyboardButton(text=_["S_B_10"], user_id=config.OWNER_ID), 
-            InlineKeyboardButton(text=_["S_B_4"], callback_data="settings_back_helper")
-        ],
-
-        [
-            InlineKeyboardButton(text=_["S_B_9"], url=config.SUPPORT_CHAT),
-            InlineKeyboardButton(text=_["S_B_7"], url=config.SUPPORT_CHANNEL)
-        ],
-        [
-            InlineKeyboardButton(text=_["S_B_6"], web_app=WebAppInfo(url="https://yourshivang.netlify.app")), 
-            InlineKeyboardButton(text=_["S_B_5"], url="https://github.com/riteshxcoder/RiteshMusic")
+            InlineKeyboardButton(text="ᴜᴛɪʟɪᴛʏ ᴄᴏᴍᴍᴀɴᴅs", callback_data="settings_back_helper"),
         ]
     ]
     return buttons
