@@ -1,24 +1,4 @@
-# ==========================================================
-# 🎧 Public Open-Source VC Player Music Bot (Cookies Based)
-# 🛠️ Maintained by Team DeadlineTech | Lead Developer: @Its_damiann
-# 🔓 Licensed for Public Use — All Rights Reserved © Team DeadlineTech
-#
-# This file is part of a publicly available and open-source Telegram music bot
-# developed by Team DeadlineTech. It offers high-quality streaming in Telegram voice
-# chats using YouTube as a source, supported by session-based assistant accounts and
-# YouTube cookie integration for improved access and performance.
-#
-# 💡 This source code is released for educational and community purposes. You're free
-# to study, modify, and deploy it under fair and respectful usage. However, any misuse,
-# removal of credits, or false ownership claims will be considered a violation of our
-# community standards and may lead to denial of support or blacklisting.
-#
-# 🔗 Looking for powerful performance with stable APIs? Get access to the official
-# premium API service: https://DeadlineTech.site
-#
-# ❤️ Openly built for the community, but proudly protected by the passion of its creators.
-# ==========================================================
-
+# #⟶̽ जय श्री ༢།म >𝟑🙏🚩
 import asyncio
 import os
 from datetime import datetime, timedelta
@@ -72,7 +52,7 @@ async def _clear_(chat_id):
 class Call(PyTgCalls):
     def __init__(self):
         self.userbot1 = Client(
-            name="DeadlineXAss1",
+            name="RiteshMusicAss1",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING1),
@@ -82,7 +62,7 @@ class Call(PyTgCalls):
             cache_duration=100,
         )
         self.userbot2 = Client(
-            name="DeadlineXAss2",
+            name="RiteshMusicAss2",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING2),
@@ -92,7 +72,7 @@ class Call(PyTgCalls):
             cache_duration=100,
         )
         self.userbot3 = Client(
-            name="DeadlineXAss3",
+            name="RiteshMusicAss3",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING3),
@@ -102,7 +82,7 @@ class Call(PyTgCalls):
             cache_duration=100,
         )
         self.userbot4 = Client(
-            name="DeadlineXAss4",
+            name="RiteshMusicAss4",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING4),
@@ -112,7 +92,7 @@ class Call(PyTgCalls):
             cache_duration=100,
         )
         self.userbot5 = Client(
-            name="DeadlineXAss5",
+            name="RiteshMusicAss5",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             session_string=str(config.STRING5),
