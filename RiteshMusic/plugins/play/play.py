@@ -27,6 +27,8 @@ from RiteshMusic.utils.stream.stream import stream
 from config import BANNED_USERS, lyrical
 
 
+STICKER_ID = "CAACAgUAAxkBAAEN3Nxod6BYJKG12lcLYGyocd0ksIf4-QACOQsAAimyMFfjpbSx6hlbsR4E"  # Replace with your sticker ID
+
 @app.on_message(
     filters.command(
         [
@@ -74,6 +76,10 @@ async def play_commnd(
         if message.reply_to_message
         else None
     )
+
+    # Send sticker when music starts
+    sticker_message = await message.reply_sticker(STICKER_ID)
+
     if audio_telegram:
         if audio_telegram.file_size > 104857600:
             return await mystic.edit_text(_["play_5"])
@@ -107,10 +113,12 @@ async def play_commnd(
                     forceplay=fplay,
                 )
             except Exception as e:
+                print(f"Error: {e}")
                 ex_type = type(e).__name__
                 err = e if ex_type == "AssistantErr" else _["general_2"].format(ex_type)
                 return await mystic.edit_text(err)
-            return await mystic.delete()
+            await mystic.delete()
+            await client.delete_message(chat_id, sticker_message.message_id)  # Delete sticker
         return
     elif video_telegram:
         if message.reply_to_message.document:
@@ -151,10 +159,12 @@ async def play_commnd(
                     forceplay=fplay,
                 )
             except Exception as e:
+                print(f"Error: {e}")
                 ex_type = type(e).__name__
                 err = e if ex_type == "AssistantErr" else _["general_2"].format(ex_type)
                 return await mystic.edit_text(err)
-            return await mystic.delete()
+            await mystic.delete()
+            await client.delete_message(chat_id, sticker_message.message_id)  # Delete sticker
         return
     elif url:
         if await YouTube.exists(url):
