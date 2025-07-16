@@ -3,7 +3,7 @@
 
 from pyrogram.types import InlineKeyboardButton
 import config
-from AnieXEricaMusic import app
+from RiteshMusic import app
 
 def start_panel(_):
     buttons = [
